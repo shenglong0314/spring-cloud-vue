@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="auth" />
+        <module name="authserver" />
+        <module name="hystrix" />
+        <module name="parent-eurake-service" />
+        <module name="parent-provide-system-service" />
+        <module name="parent-web-user" />
+        <module name="spring-boot-admin" />
+        <module name="springbootAuth" />
+        <module name="sso" />
+        <module name="zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
+      <module name="authserver" target="1.8" />
+      <module name="dubbo-provide-service" target="1.8" />
+      <module name="hystrix" target="1.8" />
+      <module name="paren-teurake-service" target="1.8" />
+      <module name="paren-tsystem-provide" target="1.8" />
+      <module name="parent" target="1.8" />
+      <module name="parent-eurake-service" target="1.8" />
+      <module name="parent-provide" target="1.8" />
+      <module name="parent-provide-system" target="1.8" />
+      <module name="parent-provide-system-api" target="1.8" />
+      <module name="parent-provide-system-service" target="1.8" />
+      <module name="parent-web" target="1.8" />
+      <module name="parent-web-user" target="1.8" />
+      <module name="spring-boot-admin" target="1.8" />
+      <module name="springbootAuth" target="1.8" />
+      <module name="sso" target="1.8" />
+      <module name="zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth" options="-parameters" />
+      <module name="hystrix" options="-parameters" />
+      <module name="paren-teurake-service" options="-parameters" />
+      <module name="paren-tsystem-provide" options="-parameters" />
+      <module name="parent" options="-parameters" />
+      <module name="parent-eurake-service" options="-parameters" />
+      <module name="parent-provide" options="-parameters" />
+      <module name="parent-provide-system" options="-parameters" />
+      <module name="parent-provide-system-api" options="-parameters" />
+      <module name="parent-provide-system-service" options="-parameters" />
+      <module name="parent-web-user" options="-parameters" />
+      <module name="spring-boot-admin" options="-parameters" />
+      <module name="springbootAuth" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.glf.parent.provide.system.dao.RouterMapper">
+    <resultMap id="BaseResultMap" type="com.glf.parent.provide.system.entity.Router">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="path" property="path" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="parentid" property="parentid" jdbcType="BIGINT"/>
+        <result column="metaid" property="metaid" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <resultMap id="findRouterTree" type="com.glf.parent.provide.system.pojo.RouterTree" extends="BaseResultMap">
+        <!-- <collection property="meta"  ofType="com.glf.parent.provide.system.pojo.RouterTree" select="findMeta"  column="meta" />-->
+        <collection property="button" ofType="com.glf.parent.provide.system.entity.Button">
+            <result column="_name" property="name" jdbcType="VARCHAR"/>
+            <result column="value" property="value" jdbcType="VARCHAR"/>
+        </collection>
+
+        <!--   <association property="meta" column="meta" javaType="com.glf.parent.provide.system.entity.Meta">
+             <result column="add" property="add" jdbcType="BIT" />
+             <result column="delete" property="delete" jdbcType="BIT" />
+             <result column="edit" property="edit" jdbcType="BIT" />
+             <result column="select" property="select" jdbcType="BIT" />
+             <result column="title" property="title" jdbcType="VARCHAR" />
+             <result column="icon" property="icon" jdbcType="VARCHAR" />
+           </association>-->
+    </resultMap>
+    <select id="findButton" resultType="com.glf.parent.provide.system.entity.Button">
+       SELECT * FROM `meta` WHERE id=#{metaid}
+  </select>
+    <select id="findRouterAndMeta" parameterType="Long" resultMap="findRouterTree">
+
+ SELECT r.*,b.name _name ,b.value VALUE FROM ( SELECT r.*,rr.id rrid FROM `router` r, `roles_router` rr WHERE r.id = rr.routerid AND rr.rolesid=#{id}) r LEFT JOIN button b ON b.rrid=r.rrid
+
+
+  </select>
+</mapper>

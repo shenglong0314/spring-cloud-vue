@@ -1,0 +1,10 @@
+server:
+  port: 9999
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+turbine:
+  app-config: SYSTEM-WEB,SYSTEM-PRIVATE
+  cluster-name-expression: "'default'"

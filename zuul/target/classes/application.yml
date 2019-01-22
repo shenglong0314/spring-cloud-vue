@@ -1,0 +1,17 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: zuul
+  main:
+    allow-bean-definition-overriding: true
+zuul:
+  routes:
+    users:
+      path: /user/**
+      serviceId: SYSTEM-PRIVATE
+server:
+  port: 9908
